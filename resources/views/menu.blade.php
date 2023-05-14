@@ -1,4 +1,4 @@
-<section id="mu-restaurant-menu" style="margin-top: -150px">
+<section id="mu-restaurant-menu">
     <div class="container">
       <div class="row">
         <div class="col-md-12">

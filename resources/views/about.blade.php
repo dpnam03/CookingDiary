@@ -26,7 +26,6 @@
                   <li>Tư vấn 24/7</li>
                   <li>Nhiệt tình là thứ chúng tôi không bao giờ thiếu.</li>
                 </ul>
-                <p><strong>Cooking Diary</strong> made by Đinh Phương Nam - KTPM1 - K11 - <strong>Trường Đại Học Công Nghiệp Hà Nội</strong></p>
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@
 				<div class="alert alert-success">{{ Session::get('thanhcong') }}</div>
 			@endif
 			@CSRF 
-			<div class="col-sm-6" style="margin-bottom: 80px; border: 1px solid #b2bec3">
+			<div class="col-sm-6 infomain" style="margin-bottom: 80px;">
 				<form>				
 				  	<div class="form-group">
                         <label>Avatar	</label>
@@ -78,7 +78,7 @@
                         <label>Số điện thoại:	</label>
                         <strong>0{{ Auth::user()->phone }}</strong>
                     </div>
-				  	<div class="pull-right">
+				  	<div class="pull-center">
 				  		<button type="button" class="btn btn-primary"><a href="edit-thong-tin-ca-nhan/{{Auth::user()->id}}"> Cập nhật</a></button>
 				  	</div>
 				</form>					
@@ -94,7 +94,10 @@
 		</div>		
 		<div class="clearfix"></div>
 	</div>
-<div style="border: 1px solid blue">
+<div style="border: 1px solid #e58a2f;
+    margin-bottom: 50px;
+    padding: 50px;
+    border-radius: 10px;">
 	<div class="table-responsive">
     <table class="table table-bordered">
       <thead>

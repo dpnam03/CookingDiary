@@ -39,7 +39,7 @@
 </section>
   <!-- End slider  -->
   <!-- Start Map section -->
-  @include('map')
+  @include('map') 
   <!-- End Map section -->
 
 @endsection

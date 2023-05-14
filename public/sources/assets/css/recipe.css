@@ -39,7 +39,7 @@
 }
 
 .recipe-header-info {
-  border: .5px solid #ddd;
+  border: .5px solid var(--theme-color);
   padding: 30px;
   background: #fff;
   padding-bottom: 0;
@@ -95,7 +95,7 @@
 
 .recipe-ingredient-wrapper {
   overflow: hidden;
-  border: .5px solid #ddd;
+  border: .5px solid var(--theme-color);
   margin-top: 15px;
   background: #fff;
   padding: 30px;
@@ -163,7 +163,7 @@
 }
 
 .recipe-detail-box {
-  border: .5px solid #ddd;
+  border: .5px solid var(--theme-color);
   background-color: #fff;
   margin-top: 15px;
   border-radius: 12px;
@@ -172,6 +172,7 @@
 
 .recipe-direction-box {
   padding: 15px;
+
 }
 
 .recipe-direction-box .headline {
@@ -268,7 +269,7 @@
 }
 
 .recipe-detail-box .panel-default>.panel-heading a.tick-active {
-  color: #d43f3a;
+  color: var(--theme-color);
   font-weight: bold;
   font-size: 28px;
 }
@@ -332,7 +333,7 @@
 
 .recipe-container .simple-review-form.with-fake-input {
   border-radius: 12px;
-  border: .5px solid #ddd;
+  border: 5px solid #ddd;
   margin-bottom: 15px;
 }
 
@@ -355,13 +356,13 @@
   position: relative;
   box-shadow: none;
   margin: 10px 0;
-  border-radius: 4px;
-  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+  border: 1px solid var(--theme-color);
 }
 
 .review-has-comments {
   background-color: #fff;
-  border: .5px solid #ddd;
+  border: .5px solid var(--theme-color);
   margin-bottom: 15px;
   padding: 30px;
   position: relative;
@@ -374,8 +375,8 @@
 }
 
 .related-recipe-box {
-  background-color: #fff;
-  border: .5px solid #ddd;
+  background-color: white;
+  border: .5px solid var(--theme-color) ;
   border-radius: 12px;
   overflow: hidden;
   padding: 0 15px;
@@ -422,11 +423,19 @@
   border-radius: 15px;
 }
 .detail_1 {
-  margin-top: 220px;
   height: auto;
 }
 #mu-gallery {
   float: none;
+}
+.recipe-detail-page .btncomment {
+  background-color: var(--theme-color) !important;
+}
+.media-body.d-flex {
+  margin-bottom: 22px;
+}
+input#INPUT_762 {
+  border:1px solid var(--theme-color) ;
 }
 @media (max-width: 991px){
   .related-box a img{

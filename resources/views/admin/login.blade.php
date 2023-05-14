@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="{{ asset('js/sweetalert2@11.js') }}"></script>
 <head>
 	<title>Login</title>
 	<base href="{{ asset('')}}">
@@ -44,9 +45,13 @@
 				<form class="login100-form validate-form" action="admin/dangnhap" method="POST">
 					@CSRF 
 					<div class="login100-form-avatar">
-						<img src="login_asset/images/avatar-01.jpg" alt="AVATAR">
+						<img src="upload\logo\logo.png" alt="AVATAR">
 					</div>
-
+					@if (session('message'))
+						<div class="alert alert-warning">
+							{{ session('message') }}
+						</div>
+					@endif
 					<span class="login100-form-title p-t-20 p-b-45">
 {{--						Đăng nhập--}}
 					</span>

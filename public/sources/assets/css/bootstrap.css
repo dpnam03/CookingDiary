@@ -1468,7 +1468,7 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #e58a2f;
 }
 
 .sr-only {
@@ -4329,7 +4329,7 @@ tbody.collapse.in {
     cursor: not-allowed;
     background-color: transparent;
     background-image: none;
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
+    /*filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);*/
 }
 
 .open>.dropdown-menu {
@@ -4378,7 +4378,7 @@ tbody.collapse.in {
     content: "";
     border-top: 0;
     border-bottom: 4px dashed;
-    border-bottom: 4px solid \9;
+    border-bottom: 4px;
 }
 
 .dropup .dropdown-menu,
@@ -5059,7 +5059,6 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 
 @media (min-width: 768px) {
     .navbar-collapse {
-        width: auto;
         border-top: 0;
         -webkit-box-shadow: none;
         box-shadow: none;
@@ -5067,9 +5066,8 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
     .navbar-collapse.collapse {
         display: block !important;
         height: auto !important;
-        padding-bottom: 0;
+        padding-top: 30px;
         overflow: visible !important;
-        margin-right: 100px;
     }
     .navbar-collapse.in {
         overflow-y: visible;
@@ -5151,8 +5149,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 
 .navbar-brand {
     float: left;
-    height: 50px;
-    padding: 15px 15px;
+    padding: 15px 0;
     font-size: 18px;
     line-height: 20px;
 }
@@ -5252,7 +5249,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
     .navbar-nav>li>a {
         padding-top: 15px;
         padding-bottom: 15px;
-        color: orange;
+        color: #1b1b1b
     }
 }
 
@@ -5388,7 +5385,6 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
         float: left !important;
     }
     .navbar-right {
-        float: right !important;
         margin-right: -15px;
     }
     .navbar-right~.navbar-right {
@@ -7577,7 +7573,6 @@ button.close {
     background-image: -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
     background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
     background-repeat: repeat-x;
 }
 
@@ -7804,7 +7799,6 @@ button.close {
 }
 
 @-ms-viewport {
-    width: device-width;
 }
 
 .visible-xs,

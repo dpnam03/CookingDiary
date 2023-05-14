@@ -1,11 +1,11 @@
 @extends('master')
 @section('content')
 <div class="container postRe" id="content">
-    <div class="inner-header" style="margin-top: 200px">
+    <div class="inner-header">
 	<div class="container">
-    <div class="pull-right">
+    <div class="pull-left">
       <div class="beta-breadcrumb">
-        <a href="{{ route('trang-chu') }}">Home</a> / <span>Đăng công thức</span>
+        <a href="{{ route('trang-chu') }}"><i class="fas fa-home" aria-hidden="true"></i>Home</a> / <span>Đăng công thức</span>
       </div>
     </div>
     <div class="clearfix"></div>

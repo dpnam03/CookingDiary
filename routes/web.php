@@ -162,8 +162,10 @@ Route::get('trang-chu',[
 	'as'=>'trang-chu',
 	'uses'=>'PageController@getIndex'
 ]);
-
-Route::post('timkiemmonan','PageController@postTimKiemMonAn');
+Route::get('',[
+    'as'=>'trang-chu',
+    'uses'=>'PageController@getIndex'
+]);
 
 Route::get('search',[
 	'as'=>'search',
@@ -212,3 +214,7 @@ Route::post('comment/{id}','CommentController@postComment');
 // Route::post('comment1/{id}','CommentController@postComment1');
 
 Route::post('recipesLike/{id}','PageController@postLike');
+
+Route::get('/filter', 'FilterController@filter')->name('filter');
+
+Route::post('/recipe/like', 'PageController@like')->name('recipe.like');

@@ -26,10 +26,13 @@
 #FOOTER SECTION
 #RESPONSIVE DESIGN
 */
+:root {
+    --theme-color: #e58a2f;
+}
 
 body {
-    background-color: #F2F3F5;
-    font-family: sans-serif;
+    background-color: #fff;
+    font-family: 'Source Sans Pro';
     color: #333333;
     font-size: 14px;
     overflow-x: hidden;
@@ -173,6 +176,20 @@ img {
     width: 100%;
     z-index: 999;
 }
+.row {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    width: 1140px;
+    margin: 0 auto;
+  }
+  .navbar-logo {
+    width: 140px;
+    height: auto;
+  }
+
 
 
 /*==================
@@ -180,6 +197,7 @@ img {
 ====================*/
 
 .mu-main-navbar {
+    display: none;
     background-color: transparent;
     border: none;
     padding: 20px 0;
@@ -287,7 +305,7 @@ img {
 #mu-slider {
     display: inline;
     float: left;
-    margin-top: 140px;
+    margin-top: 80px;
     width: 100%;
     position: relative;
 }
@@ -559,6 +577,7 @@ img {
     padding: 25px 0;
     text-align: center;
     width: 100%;
+    border-radius: 30Px;
 }
 
 .mu-counter-nav li .mu-single-counter span {
@@ -1763,14 +1782,14 @@ RESERVATION SECTION
 }
 
 .fz {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .iconAccount {
-    /* width: 38px; */
-    /* margin-left: 1100px; */
-    height: 38px;
-    /* margin-top: -30px; */
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-left: 10px;
 }
 
 .message {
@@ -1781,9 +1800,12 @@ RESERVATION SECTION
 }
 
 .login-box {
-    margin-top: 10px;
+    width: 20%;
 }
-
+.by-view {
+    display: flex;
+    justify-content: space-between;
+}
 .postRecipe {
     background: white;
     /* width: 150px; */
@@ -1800,8 +1822,7 @@ RESERVATION SECTION
     font-size: 14px;
     border-radius: 12px;
     border: 1px solid #ddd;
-    margin-left: 30px;
-    margin-top: 10px;
+    margin-right: 20%;
 }
 
 .header-search input {
@@ -1823,7 +1844,7 @@ RESERVATION SECTION
     padding: 0 15px;
     border-left: .5px solid #eee;
     background: #f8f8f8;
-    color: #c70808;
+    color: #e58a2f;
 }
 
 .header-search input:focus {
@@ -1867,8 +1888,178 @@ RESERVATION SECTION
 }
 
 .header_top {
-    border-bottom: 1px solid #ebebeb;
-    background: #F8F9F9;
+    width: 45%;
+    padding: 30px 0;
+    line-height: 50px;
+}
+.header_account {
+    display: flex;
+    justify-content: flex-end; 
+}
+.header_account>ul {
+    display: flex;
+    height: 50px;
+    padding: 10px 0;
+}
+.logins {
+    background: #e58a2f;
+    border-radius: 10px;
+    padding: 0 10px;
+    line-height: 30px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.logins >a {
+    color: white;
+    font-size: 16px;
+}
+.signin {
+    background: white;
+    border-radius: 10px;
+    padding: 0 10px;
+    line-height: 30px;
+    font-weight: 600;
+    border: 2px solid #e58a2f;
+}
+.signin >a {
+    color: #e58a2f;
+    font-size: 16px;
+}
+.container-top {
+    display: flex;
+    justify-content: flex-end;
+}
+.header_account li.logouts {
+    padding: 5px 0;
+    line-height: 0px;
+    font-size: 20px;
+}
+
+.header_account .logouts >a {
+    color: #e58a2f;
+}
+.iconAccount>a>img {
+    width: 30px;
+    height: 30px;  
+    border-radius: 20%;
+    border: 2px solid #e58a2f; 
+}
+.top-content {
+    display: flex;
+    justify-content: space-between;
+}
+.h1-filter {
+    width: 20%;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 40px;
+}
+.home-search {
+    width: 60%;
+}
+.home-recipes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.recipes {
+    width: 80%;
+}
+.filter {
+    padding: 0;
+    padding-right: 20px;
+}
+.filter .btn {
+    width: 100%;
+        background-color: #e58a2f;
+    border: none;
+}
+.row-recipes {
+    width: auto;
+}
+.row-recipes .col-lg-4 {
+    margin-bottom: 25px;
+}
+.quick_button {
+    display: flex;
+    justify-content: space-between;
+}
+.quick_button .label_like {
+    margin-right: 15px;
+}
+.time-level {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.price_box {
+    color: #e58a2f;
+}
+.product_thumb {
+    font-size: 16px
+}
+.pagination>.active>span {
+    background-color: #e58a2f;
+    border-color: #e58a2f;
+}
+.pagination>li>a {
+    color: #e58a2f;
+    background-color: #f8f1e8;
+}
+.search-page {
+    padding: 150px 0 0 !important;
+}
+.search-page .h1-filter {
+    width: 25%;
+}
+.search-page .time-level {
+    margin-right: 0;
+}
+.mu-single-counter {
+    background-color: #e58a2f !important;
+}
+.mu-restaurant-menu li a {
+    background-color: #e58a2f !important;
+    border-radius: 10PX;
+}
+.mu-restaurant-menu li a:hover {
+    color: #fff;
+}
+.mu-restaurant-menu .active a {
+    background-color: #f8f1e8 !important;
+    border: 1px solid #e58a2f !important;
+}
+.search-like {
+    width: 100%;
+}
+.search-like .time-level {
+    margin-right: 30px;
+}
+.search-like .quick_button {
+    margin-right: 15px;
+    font-weight: 600;
+}
+.quick_button {
+    font-weight: 600;
+}
+.like-this {
+    width: 1190px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.view-more {
+    width: 150px;
+    margin-right: 30px;
+    background: #e58a2f;
+    border-radius: 15px;
+    line-height: 45px;
+}
+.view-more a {
+    color: #fff;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1962,6 +2153,7 @@ RESERVATION SECTION
 .header_account>ul>li {
     display: inline-block;
     position: relative;
+    color: #e58a2f;
     margin-right: 20px;
     padding-right: 20px;
 }
@@ -1975,7 +2167,9 @@ RESERVATION SECTION
 
 .header_account>ul>li:last-child {
     margin-right: 0;
-    padding-right: 0;
+}
+.header_account .wishlist {
+    display: none;
 }
 
 .header_account>ul>li:last-child::before {
@@ -1984,7 +2178,7 @@ RESERVATION SECTION
 
 .header_account>ul>li::before {
     content: "";
-    display: block;
+    display: none;
     width: 1px;
     background: #ccc;
     height: 16px;
@@ -2145,6 +2339,10 @@ RESERVATION SECTION
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 250px;
+}
+.row.align-items-center {
+
 }
 
 .top_right .header_account>ul>li>a i {
@@ -2312,18 +2510,122 @@ RESERVATION SECTION
 }
 
 #guide {
-    border: 0.5px solid #ddd;
-    background: #bed4cf;
+    border: 0.5px solid var(--theme-color);
+    background: #fff;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .postRe {
-    margin-top: 50px;
+    margin-top: 150px;
     margin-bottom: 200px;
-    border: 0.5px solid black;
-    background-color: #e9ebee;
+    border: 1px solid var(--theme-color);
+    background-color: #f8ece8;
+    border-radius: 20px;
+}
+.postRe .pull-left {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    width: 300px;
+    padding-left: 40px;
+}
+.postRe fieldset {
+    padding: 0 50px;
+}
+.postRe fieldset legend {
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.postRe .control-group select {
+    height: 40px !important;
+    width: 400px !important;
+    border: 1px solid var(--theme-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+.postRe .control-group .controls input {
+    width: 400px;
+    height: 40px;
+    border: 1px solid var(--theme-color);
+    padding: 10px;
+    border-radius: 10px;
+}
+.postRe .control-group {
+        font-size: 16px;
+}
+.postRe .control-group .controls .radio-inline input {
+    width: auto;
+    height: auto;
+}
+.postRe .control-group .controls .input-xlarge {
+    border: 1px solid var(--theme-color);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.postRe .btn-success {
+    margin-top: 20px;
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+}
+.postRe .btn-success.pull-right {
+    margin-top: auto;
+}
+.postRe .form-actions .btn{
+    width: 180px;
+    margin-left: 20px;
+    border-color: var(--theme-color);
+}
+.postRe .form-actions .btn-primary{
+    width: 200px;
+    margin-left: 0;
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
 }
 
+.postRe .control-label {
+    margin-bottom: 10px;
+}
+.infomain {
+    width: 100%;
+    border: 1px solid var(--theme-color);
+    padding: 50px;
+    border-radius: 10px;
+}
+.infomain .form-group {
+    text-align: center;
+}
+.infomain .pull-center {
+    text-align: center;
+}
+.infomain .pull-center .btn-primary {
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+    width: 150px;
+}
+.infomain .pull-center .btn-primary a {
+    color: #fff;
+}
+.form-group input {
+    border: 1px solid var(--theme-color);
+}
+.btn-primary {
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+}
+.btn-primary:hover {
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+}
+.btn-danger a {
+    color: white;
+}
+
+.recipe-detail-page .row {
+    width: auto;
+}
 
 /* .title-sanpham{
   border: 1px solid black;
@@ -2392,7 +2694,7 @@ RESERVATION SECTION
     .mu-counter-overlay {
         background-color: rgba(0, 0, 0, 0.8);
         display: inline;
-        padding: 100px 1;
+        padding: 100px;
         float: left;
         width: 100%;
     }

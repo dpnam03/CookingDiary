@@ -42,11 +42,11 @@
                         <h1 id="H1_24">
                             {{ $recipe->name }}
                         </h1>
-                        <span class="fa fa-star text-orange" style="color: orange!important;"></span>
-                        <span class="fa fa-star text-orange" style="color: orange!important;"></span>
-                        <span class="fa fa-star text-orange" style="color: orange!important;"></span>
-                        <span class="fa fa-star text-orange" style="color: orange!important;"></span>
-                        <span class="fa fa-star text-orange" style="color: orange!important;"></span>
+                        <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
+                        <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
+                        <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
+                        <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
+                        <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
                     </div>
                 </div>
                 <div id="DIV_40">

@@ -36,7 +36,7 @@
 				    	<label for="exampleInputEmail1">Họ tên</label>
 				    	<input type="text" class="form-control" name="name" value="{{$user->name }}" aria-describedby="nameHelp" placeholder="Enter name">					    
 				  	</div>
-				  	<div class="form-group">
+				  	<div class="form-group ">
                         <label>Avatar</label>
                         <p>
                         <img src="upload/avatar/{{ Auth::user()->avatar }}" width="300px">
@@ -80,7 +80,7 @@
                         <label>Số điện thoại:</label>
                         <input type="text" class="form-control" name="phone" placeholder="Nhập số điện thoại" value="{{ Auth::user()->phone }}" />
                     </div>
-				  	<div class="pull-right">
+				  	<div class="pull-left">
 				  		<button type="submit" class="btn btn-primary">Cập nhật</button>
 						<button type="reset" class="btn btn-danger"><a href="information/{{Auth::user()->id}}">Hủy bỏ </a></button>
 				  	</div>

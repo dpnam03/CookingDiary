@@ -17,7 +17,7 @@
                   <!-- Email message div -->
                   <div id="form-messages"></div>
                   <!-- Start contact form -->
-                  <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
+                  <form id="ajax-contact" method="post" action="" class="mu-contact-form">
                     <div class="form-group">
                       <label for="name">Tên của bạn</label>
                       <input type="text" class="form-control" id="name" name="name" placeholder="Họ tên" required>

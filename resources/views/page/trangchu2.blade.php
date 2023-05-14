@@ -15,7 +15,7 @@
           <!-- Top slider content -->
           <div class="mu-top-slider-content">
             <div class="title">               
-              <h1 class="mt2 mb1 center" style="color: orange">Ăn gì hôm nay? Nấu ngay món ngon</h1>
+              <h1 class="mt2 mb1 center" style="color: #e58a2f">Ăn gì hôm nay? Nấu ngay món ngon</h1>
             </div>
               <form method="get" action="{{ route('search') }}">
                 <div class="search-container">

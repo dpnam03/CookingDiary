@@ -1,170 +1,169 @@
 @extends('master')
 @section('content')
-<section id="mu-slider">
-    <div class="container">
-     <div class="mu-slider-are"> 
 
-      <!-- Top slider -->
-      <div class="mu-top-slider"   style="margin-top: 60px">
-        <!-- Top slider single slide -->
-        @foreach($slide as $sl)
-        <div class="mu-top-slider-single">
-          <img style="border-radius: 2%" src="upload/slide/{{ $sl->image }}" alt="img" width="2200px" height="400px">
-          <!-- Top slider content -->
-          <div class="mu-top-slider-content">
-            <div class="title">
-              <h1 class="mt2 mb1 center" style="color: orange">Ăn gì hôm nay? Nấu ngay món ngon</h1>
-            </div>
-            <form method="get" action="{{ route('search') }}">
-              <div class="search-container">
-                <span>
-                  <i class="fas fa-search"></i>
-                </span>
-                <input type="text" name="key" value="{{ $result }}" class="form-control" placeholder="Ví dụ: kim chi, cupcake, soup, sinh tố..">
-              </div>
-            </form>
-            {{-- <span class="mu-slider-small-title">Chào mừng bạn đến</span> --}}
-            {{-- <h2 class="mu-slider-title">Cooking Diary</h2> --}}
-            <p></p>           
-            {{-- <a href="#mu-reservation" class="mu-readmore-btn mu-reservation-btn">BOOK A TABLE</a> --}}
-          </div>
-          <!-- / Top slider content -->
-        </div>
-        @endforeach
-      </div>
-    </div>
-    </div>
-  </section>
   <!-- End slider  -->
 {{-- <section id="mu-gallery"> --}}
-  <div class="product_area deals_product mb-50">
-        <section id="mu-gallery">
-          <div class="container">
-              <div class="row">
-                  <div class="col-12">
-                      <div class="mu-title" style="height: 40px">
-                         <h2>{{ count($recipes2) }} công thức làm <span style="color:red">"{{ $result }}"</span> ngon </h2>
+  <div class="product_area deals_product mb-50 ">
+      <section id="mu-gallery" class="search-page">
+          <div class="top-content container">
+              <!--Start search-->
+              <div class="h1-filter">Bộ Lọc</div>
+              <div class="col-md-5 home-search">
+                  <form method="get" action="{{ route('search') }}">
+                      <div class="header-search">
+                          <input class="namerecipe" placeholder="Tìm kiếm công thức" type="text" name="key">
+                          <button type="submit" class="btn-header--search">
+                              <i class="fas fa-search"></i>
+                          </button>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-md-5 login-box" >
+                  <div class="row col-md-10">
+                      <div class=" postRecipe col-md-6 col-xs-8">
+                          <a href="{{route('post')}}" onclick="myFunction()">
+                              <div style="margin-top: 5px;">
+                                  <img width="30px"; height="30px" src="upload/logo/post.png" alt=""> Đăng công thức
+                              </div>
+                          </a>
                       </div>
                   </div>
-              </div> 
-              <div class="row">
-                  <div class="product_carousel product_column4 owl-carousel">
-                    @foreach($recipes2 as $re)
-                    <div class="col-lg-3">
-                          <article class="single_product">
-                              <figure>
-                               <div class="product_name" style="height: 40px">
-                                   <h4><a href="{{ route('recipes', $re->id) }}"><strong>{{ $re->name }}</strong></a></h4>
-                               </div>
+              </div>
+              <!--End Search-->
+          </div>
+          <div class="container home-recipes">
+              <!--Start filter-->
+              <div class="col-md-3 filter">
+                  <form method="get" action="{{ route('filter') }}">
+                      <div class="form-group">
+                          <label for="time">Mục đích</label>
+                          <select class="form-control" id="category" name="category">
+                              <option value="">Tất cả</option>
+                              @foreach($category as $cat)
+                                  <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                              @endforeach
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label for="level">Độ khó</label>
+                          <select class="form-control" id="level" name="level">
+                              <option value="">Tất cả</option>
+                              <option value="1">Dễ</option>
+                              <option value="2">Trung bình</option>
+                              <option value="3">Khó</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label for="time">Thời gian</label>
+                          <select class="form-control" id="time" name="time">
+                              <option value="">Tất cả</option>
+                              <option value="1">Dưới 30 phút</option>
+                              <option value="2">Từ 30 - 60 phút</option>
+                              <option value="3">Trên 60 phút</option>
+                          </select>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Lọc</button>
+                  </form>
+              </div>
+              <!--End filter-->
+              <div class="recipes">
+                  <div class="row row-recipes">
+                      {{-- <div class="product_carousel product_column4 owl-carousel"> --}}
+                      @foreach($recipes2 as $re)
+                          <div class="col-lg-4 mb-4" >
+                              <article class="single_product">
+                                  <figure>
+                                      <div class="product_thumb">
 
-                                <div class="product_thumb">
-                                    <a class="primary_img" href="{{route('recipes', $re->id)}}"><img style="border-radius: 10px" src="upload/dish/{{ $re->dish->image }}" alt=""></a>
-                                    <div>
-                                      <span class="label_like"><span class="nlike">{{$re->number_like}}</span><a class="like" idRecipe = "{{$re->id}}"> <i class="far fa-thumbs-up"></i> </a> 
-                                        <input class="check_like" type="hidden" value="false">
-                                        </span>
-                                        <span><i class="far fa-clock"></i> {{ $re->time }}p</span>
-                                        <span class="label_sale"><strong> </strong>
-                                          
-                                          @if($re->level == 1)<i style="color: green" class="fas fa-bolt"></i> {{ "Dễ" }}
-                                          @elseif($re->level == 2)<i style="color: yellow" class="fas fa-bolt"></i> {{ "Trung bình" }}
-                                          @else <i style="color: red" class="fas fa-bolt"></i> {{ "Khó" }}</span>
-                                          @endif
-                                        <span class="label_sale"><strong> <i style="color:blue" class="fas fa-user-friends"></i>  </strong>{{ $re->eater }} người</span> 
-                                    </div>
-                                    <div>
-                                                                                
-                                    </div>
-                                    <div class="quick_button">
-                                        <a href="{{route('recipes', $re->id)}}" title="quick view"><i style="color:green" class="fas fa-book-open"></i><strong> Học nấu ngay </strong><i style="color:green" class="fas fa-book-open"></i></a>
-                                        <span>{{$re->number_view}} lượt xem</i></span>
-                                    </div>
-                                </div>
-                                <!--<div class="price_box" style="height: 100px;">-->
-                                <!--    <span class="claimedRight" maxlength="20"><strong><i style="color:yellow" class="fas fa-lightbulb"></i> Mô tả: </strong>{{ $re->dish->note }}</span>-->
-                                <!--</div>-->
-                                <div class="price_box">
-                                    <span><strong><i style="color:blue" class="fas fa-user-tie"></i> Công thức bởi: </strong>{{$re->user->name}}</span>
-                                </div>
-                                <div class="price_box product-des">
-                                    <span class="font-weight-bold" id="NOTE" value="formatText({{$re->dish->note}})">Mô tả: </span><span>{{$re->dish->note}} </span>
-                                </div>
-                            </figure>
-                          </article>
-                    </div> 
-                    @endforeach
+                                          <a class="primary_img" href="{{route('recipes', $re->id)}}"><img style="border-radius: 10px; height: 164.06px; width:262.5px" src="upload/dish/{{ $re->dish->image }}"  alt=""></a>
+                                          <div class="time-level">
+                                              <span>Thời gian : {{ $re->time }} m </span>
+                                              <span class="label_sale">
+                                            Mức độ :
+                                          @if($re->level == 1) {{ "Dễ" }} <i style="color: green" class="fas fa-bolt"></i>
+                                                  @elseif($re->level == 2) {{ "Trung bình" }} <i style="color: #e58a2f" class="fas fa-bolt"></i>
+                                                  @else  {{ "Khó" }} <i style="color: red" class="fas fa-bolt"></i></span>
+                                              @endif
+                                              {{--                                        <span class="label_sale"><strong> <i style="color:blue" class="fas fa-user-friends"></i>  </strong>{{ $re->eater }} người</span>--}}
+                                          </div>
+
+                                          <div class="quick_button">
+                                              <span>Lượt xem : {{$re->number_view}} <i class="fas fa-eye"></i></span>
+                                              <span class="label_like"><span class="nlike">{{$re->number_like}}</span><a class="like" idRecipe = "{{$re->id}}"> <i class="far fa-thumbs-up"></i> </a>
+                                                <input class="check_like" type="hidden" value="false">
+                                            </span>
+                                          </div>
+                                      </div>
+                                      <div class="product_name" style="height: 40px">
+                                          <h4><a href="{{ route('recipes', $re->id) }}"><strong>{{ $re->name }}</strong></a></h4>
+                                      </div>
+                                      <div class="price_box">
+                                          <span><strong>Công thức bởi: </strong>{{$re->user->name}}</span>
+                                      </div>
+                                  </figure>
+                              </article>
+                          </div>
+                      @endforeach
                   </div>
               </div>
-              {{-- <div class="row">{{ $recipes->links() }}</div> --}}
           </div>
-        </section>
+      </section>
   </div>
 {{-- </section> --}}
-  <div class="product_area deals_product mb-50" >
-      <section id="mu-gallery" style="margin-top: -200px">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="mu-title" style="height: 40px">
-                       <h2>Các công thức khác của Cooking Diary</h2>
-                    </div>
-                </div>
-            </div> 
-            <div class="row">
-                <div class="product_carousel product_column4 owl-carousel">
-                  @foreach($recipes1 as $re)
-                  <div class="col-lg-3">
-                        <article class="single_product">
-                            <figure>
-                               <div class="product_name" style="height: 40px">
-                                   <h4><a href="{{ route('recipes', $re->id) }}"><strong>{{ $re->name }}</strong></a></h4>
-                               </div>
+  <div class="product_area deals_product mb-50">
+      <section id="mu-gallery">
+          <div class="mu-title container">
+              <div class="like-this" >
+                  <div class="can-like"><h2>Có thể bạn sẽ thích</h2></div>
+                  <div class="view-more"><a href="">Xem Thêm</a> </div>
+              </div>
+          </div>
+          <div class="container home-recipes search-like">
+              <div class="recipes">
+                  <div class="row row-recipes">
+                      {{-- <div class="product_carousel product_column4 owl-carousel"> --}}
+                      @foreach($recipes1 as $re)
+                          <div class="col-lg-3 mb-3" >
+                              <article class="single_product">
+                                  <figure>
+                                      <div class="product_thumb">
 
-                                <div class="product_thumb">
-                                    <a class="primary_img" href="{{route('recipes', $re->id)}}"><img style="border-radius: 10px" src="upload/dish/{{ $re->dish->image }}" alt=""></a>
-                                    <div>
-                                        <span class="label_like"><span class="nlike">{{$re->number_like}}</span><a class="like" idRecipe = "{{$re->id}}"> <i class="far fa-thumbs-up"></i> </a> 
-                                        <input class="check_like" type="hidden" value="false">
-                                        <span><i class="far fa-clock"></i> {{ $re->time }}p</span>
-                                        <span class="label_sale"><strong> </strong>
-                                          
-                                          @if($re->level == 1)<i style="color: green" class="fas fa-bolt"></i> {{ "Dễ" }}
-                                          @elseif($re->level == 2)<i style="color: yellow" class="fas fa-bolt"></i> {{ "Trung bình" }}
-                                          @else <i style="color: red" class="fas fa-bolt"></i> {{ "Khó" }}</span>
-                                          @endif
-                                        <span class="label_sale"><strong> <i style="color:blue" class="fas fa-user-friends"></i>  </strong>{{ $re->eater }} người</span> 
-                                    </div>
-                                    <div>
-                                                                                
-                                    </div>
-                                    <div class="quick_button">
-                                        <a href="{{route('recipes', $re->id)}}" title="quick view"><i style="color:green" class="fas fa-book-open"></i><strong> Học nấu ngay </strong><i style="color:green" class="fas fa-book-open"></i></a>
-                                        <span style="color: #636e72">{{$re->number_view}} lượt xem</i></span>
-                                    </div>
-                                </div>
-                                <!--<div class="price_box" style="height: 100px;">-->
-                                <!--    <span class="claimedRight" maxlength="20"><strong><i style="color:yellow" class="fas fa-lightbulb"></i> Mô tả: </strong>{{ $re->dish->note }}</span>-->
-                                <!--</div>-->
-                                <div class="price_box">
-                                    <span><strong><i style="color:blue" class="fas fa-user-tie"></i> Công thức bởi: </strong>{{$re->user->name}}</span>
-                                </div>
-                                <div class="price_box product-des">
-                                    <span class="font-weight-bold" id="NOTE" value="formatText({{$re->dish->note}})">Mô tả: </span><span>{{$re->dish->note}} </span>
-                                </div>
-                            </figure>
-                        </article>
-                  </div> 
-                  @endforeach
-                </div>
-            </div>
-            {{-- <div class="row">{{ $recipes->links() }}</div> --}}
-        </div>
+                                          <a class="primary_img" href="{{route('recipes', $re->id)}}"><img style="border-radius: 10px; height: 164.06px; width:262.5px" src="upload/dish/{{ $re->dish->image }}"  alt=""></a>
+                                          <div class="time-level">
+                                              <span>Thời gian : {{ $re->time }} m </span>
+                                              <span class="label_sale">
+                                            Mức độ :
+                                          @if($re->level == 1) {{ "Dễ" }} <i style="color: green" class="fas fa-bolt"></i>
+                                                  @elseif($re->level == 2) {{ "Trung bình" }} <i style="color: #e58a2f" class="fas fa-bolt"></i>
+                                                  @else  {{ "Khó" }} <i style="color: red" class="fas fa-bolt"></i></span>
+                                              @endif
+                                              {{--                                        <span class="label_sale"><strong> <i style="color:blue" class="fas fa-user-friends"></i>  </strong>{{ $re->eater }} người</span>--}}
+                                          </div>
+
+                                          <div class="quick_button">
+                                              <span>Lượt xem : {{$re->number_view}} <i class="fas fa-eye"></i></span>
+                                              <span class="label_like"><span class="nlike">{{$re->number_like}}</span><a class="like" idRecipe = "{{$re->id}}"> <i class="far fa-thumbs-up"></i> </a>
+                                                <input class="check_like" type="hidden" value="false">
+                                            </span>
+                                          </div>
+                                      </div>
+                                      <div class="product_name" style="height: 40px">
+                                          <h4><a href="{{ route('recipes', $re->id) }}"><strong>{{ $re->name }}</strong></a></h4>
+                                      </div>
+                                      <div class="price_box">
+                                          <span><strong>Công thức bởi: </strong>{{$re->user->name}}</span>
+                                      </div>
+                                  </figure>
+                              </article>
+                          </div>
+                      @endforeach
+                      {{-- </div> --}}
+                  </div>
+              </div>
+          </div>
       </section>
-    </div>
+  </div>
 
-  <!-- Start Map section -->
-  @include('map')
-  <!-- End Map section -->
   
 @endsection
 @section('script')

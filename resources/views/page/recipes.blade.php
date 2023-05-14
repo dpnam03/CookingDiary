@@ -1,7 +1,7 @@
 @extends('recipe-master')
 @section('content')
 <section id="mu-gallery">
-    <div class="detail_1">
+    <div class="detail_1 recipe-detail-page">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-sm-12">
@@ -39,11 +39,11 @@
                                 <h1 class="p-name fn recipe-title">
                                     {{ $recipe->name }}
                                 </h1>
-                                <span class="fa fa-star text-orange" style="color: orange!important;"></span>
-                                <span class="fa fa-star text-orange" style="color: orange!important;"></span>
-                                <span class="fa fa-star text-orange" style="color: orange!important;"></span>
-                                <span class="fa fa-star text-orange" style="color: orange!important;"></span>
-                                <span class="fa fa-star text-orange" style="color: orange!important;"></span>
+                                <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
+                                <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
+                                <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
+                                <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
+                                <span class="fa fa-star text-#e58a2f" style="color: #e58a2f!important;"></span>
                             </div>
                             <div class="recipe-header-stats">
                                 <div class="row justify-content-center">
@@ -352,9 +352,6 @@
                                     </div>
                                 </div>
                                 @endforeach
-                                <div class="">
-                                    {{$listrecipe->links()}}
-                                </div>
                             </div>
                         </div>
                     </div>
